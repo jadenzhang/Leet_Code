@@ -3,11 +3,11 @@ My Leet_Code Solution overtime (With both JAVA approach and C++ approach)
 
 Syntax of Filenames
 
-Filename -> Language + Question# + Difficulty + Topic + Company + Similar_Question 
+Filename -> Question#+ Question_name + Difficulty + Topic + Company + Similar_Question 
 
-Language -> (C++ | Java)
+Question# -> (0-9)+ 
 
-Question# -> (0-9)+ (a-zA-Z\s)+
+Question_name -> (a-zA-Z\s)+
 
 Difficulty -> (Hard | Medium | Easy)
 
