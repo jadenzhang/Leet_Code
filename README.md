@@ -7,7 +7,7 @@ Filename -> Language + Question# + Difficulty + Topic + Company + Similar_Questi
 
 Language -> (C++ | Java)
 
-Question# -> (0-9)+ 
+Question# -> (0-9)+ (a-zA-Z\s)+
 
 Difficulty -> (Hard | Medium | Easy)
 
