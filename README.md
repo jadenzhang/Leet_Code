@@ -3,7 +3,9 @@ My Leet_Code Solution overtime (With both JAVA approach and C++ approach)
 
 Syntax of Filenames
 
-Filename -> Question# + Difficulty + Topic + Company + Similar_Question 
+Filename -> Language + Question# + Difficulty + Topic + Company + Similar_Question 
+
+Language -> (C++ | Java)
 
 Question# -> (0-9)+ 
 
