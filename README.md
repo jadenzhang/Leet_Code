@@ -1,5 +1,5 @@
 # Leet_Code
-My Leet_Code Solution overtime (With both JAVA approach and C++ approach)
+My Leet_Code Solution overtime (With mainly C++ approach)
 
 Syntax of Filenames
 
