@@ -1,7 +1,7 @@
 //Question# + Difficulty + Topic + Company + Similar_Question
 //[1] [Two Sum] [Easy] [Array Hash Table] 
 //[LinkedIn Uber Airbnb Facebook Amazon Microsoft Apple Yahoo Dropbox Bloomberg Yelp Adobe] 
-//[15 18 167 170 560].java
+//[15 18 167 170 560].cpp
 
 /* C++ */
 class Solution {
