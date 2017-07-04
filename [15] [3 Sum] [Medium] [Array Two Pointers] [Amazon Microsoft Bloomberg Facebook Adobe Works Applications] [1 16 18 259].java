@@ -56,3 +56,68 @@ public:
         return res;
     }
 };
+
+
+/*Java*/
+
+public class Solution {
+    public List<List<Integer>> threeSum(int[] nums) {
+
+        List<List<Integer> > res = new ArrayList<>();
+
+        Arrays.sort(nums);
+
+        for (int i = 0; i < nums.length; i++) {
+
+            int target = -nums[i];
+            int front = i + 1;
+            int back = nums.length- 1;
+
+            while (front < back) {
+
+                int sum = nums[front] + nums[back];
+
+                // Finding answer which start from number num[i]
+                if (sum < target)
+                    front++;
+
+                else if (sum > target)
+                    back--;
+
+                else {
+                    List<Integer> triplet = new ArrayList<Integer>();
+                    triplet.add(nums[i]);
+                    triplet.add(nums[front]);
+                    triplet.add(nums[back]);
+                    res.add(triplet);
+
+                    // Processing duplicates of Number 2
+                    // Rolling the front pointer to the next different number forwards
+                    while (front < back && nums[front] == triplet.get(1)) 
+                    {
+                        front++;
+                    }
+
+                    // Processing duplicates of Number 3
+                    // Rolling the back pointer to the next different number backwards
+                    while (front < back && nums[back] == triplet.get(1)) 
+                    {
+                        back--;
+                    }
+                }
+
+            }
+
+            // Processing duplicates of Number 1
+            while (i + 1 < nums.length && nums[i + 1] == nums[i]) 
+            {
+                i++;
+            }
+
+        }
+
+        return res;
+    }
+        
+    
+}
