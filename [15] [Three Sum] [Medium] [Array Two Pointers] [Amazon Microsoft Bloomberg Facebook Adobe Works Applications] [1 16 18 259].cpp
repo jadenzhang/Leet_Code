@@ -1,7 +1,7 @@
 //Question# + Difficulty + Topic + Company + Similar_Question
 //[15] [3 Sum] [Medium] [Array Two Pointers]
 //[Amazon Microsoft Bloomberg Facebook Adobe Works Applications]
-//[1 16 18 259].java
+//[1 16 18 259].cpp
 
 /* C++ Others*/
 class Solution {
