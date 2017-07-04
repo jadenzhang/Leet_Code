@@ -1,7 +1,7 @@
 //Question# + Difficulty + Topic + Company + Similar_Question
 //[18] [Four Sum] [Medium] [Array Hash Table Two Pointers]
 //[]
-//[1 16 454].java
+//[1 16 454].cpp
 
 /*C++*/
 class Solution {
