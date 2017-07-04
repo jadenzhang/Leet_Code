@@ -3,7 +3,7 @@
 //[Amazon Microsoft Bloomberg Facebook Adobe Works Applications]
 //[1 16 18 259].java
 
-/* C++ */
+/* C++ Others*/
 class Solution {
 public:
     vector<vector<int> > threeSum(vector<int> &num) {
