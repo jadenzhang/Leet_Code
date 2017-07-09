@@ -30,5 +30,5 @@ e.g.
       
       So if Pre-sum that equal to Current Sum - K, It means there exist sub-array that sum to K
       
-      Initialized pair {0,1} is to handle sub-array start with beginning 0
+      Initialized pair {0,1} is to handle 0 presum, the whole sum so far
 */
