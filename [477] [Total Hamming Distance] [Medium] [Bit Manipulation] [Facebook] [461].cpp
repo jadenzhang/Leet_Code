@@ -8,18 +8,19 @@ class Solution {
 public:
     int totalHammingDistance(vector<int>& nums) {
         int n = nums.size(),dis=0;
-        int zeros[32]={0} ,ones[32]={0};
+        int ones[32]={0};
         if(n<2) return 0;
+        
         for(int j = 0;j<32;j++ )
         {
             for(int i = 0;i<n;i++)
             {
                 if((nums[i]&(1<<j))>>j) ones[j]++;
-                else zeros[j]++;
             }
-            dis+= zeros[j]*ones[j];
-        }  
-        return dis;      
+            dis+= ones[j]*(n-ones[j]);
+        }
+            
+        return dis;         
     }
 };
 // the Hamming distance in nth bit of vector of nums is P*Q( P is # with nth bit 0, Q is # with nth bit 1)
