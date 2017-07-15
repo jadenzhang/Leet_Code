@@ -2,7 +2,7 @@
 Question# + Difficulty + Topic + Company + Similar_Question
 [69] [Sqrt(x)] [Easy] [Math Binary Search ] 
 [Bloomberg Apple Facebook ] 
-[50 ].cpp
+[50 367].cpp
 */
 
 /* Newton Approach */
