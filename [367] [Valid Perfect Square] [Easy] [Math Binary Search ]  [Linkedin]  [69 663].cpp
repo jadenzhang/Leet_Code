@@ -6,7 +6,7 @@ Question# + Difficulty + Topic + Company + Similar_Question
 */
 
 
-/* Use the fact that all perfect square number are sum of consecutive Odd numbers: 1+3+5+7...
+/* Use the fact that all perfect square number are sum of consecutive Odd numbers: 1+3+5+7...*/
 class Solution {
 public:
     bool isPerfectSquare(int n) {
