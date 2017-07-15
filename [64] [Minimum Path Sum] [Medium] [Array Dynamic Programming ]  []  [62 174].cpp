@@ -5,7 +5,7 @@ Question# + Difficulty + Topic + Company + Similar_Question
 [62 174].cpp
 */
 
-//\mathrm{grid}(i, j)=\mathrm{grid}(i,j)+\min \big(\mathrm{grid}(i+1,j), \mathrm{grid}(i,j+1)\big) grid(i,j)=grid(i,j)+min(grid(i+1,j),grid(i,j+1))
+/* Grid(i,j) = Grid(i,j)+Min(Grid(i+1,j),Grid(i,j+1))*/
 class Solution {
 public:
     int minPathSum(vector<vector<int>>& grid) {
