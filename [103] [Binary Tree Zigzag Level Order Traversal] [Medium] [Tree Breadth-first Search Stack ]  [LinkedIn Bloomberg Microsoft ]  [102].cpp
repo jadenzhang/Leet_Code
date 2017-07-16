@@ -31,3 +31,46 @@ public:
         if(root->right) recur(root->right,ans,depth+1);       
     }
 };
+
+
+
+/* Iterative Approach */
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+ * };
+ */
+class Solution {
+public:
+    vector<vector<int>> zigzagLevelOrder(TreeNode* root) {
+       vector<vector<int> >  result;
+        if (!root) return result;
+        queue<TreeNode*> q;
+        q.push(root);
+        q.push(NULL);
+        bool zigzag = 1;
+        vector<int> cur_vec;
+        while(!q.empty()) {
+            TreeNode* t = q.front();
+            q.pop();
+            if (t==NULL) {
+                result.push_back(cur_vec);
+                zigzag  = !zigzag;
+                cur_vec.resize(0);
+                if (q.size() > 0) {
+                    q.push(NULL);
+                }
+            } else {
+                if(zigzag)cur_vec.push_back(t->val);
+                else cur_vec.insert(cur_vec.begin(),t->val);
+                if (t->left) q.push(t->left);
+                if (t->right) q.push(t->right);
+            }
+        }
+        return result;
+    }
+};
