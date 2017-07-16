@@ -32,16 +32,38 @@ Thus, if we write a recursive function who generates a group of trees in which t
  */
 class Solution {
 public:
-    int minDepth(TreeNode* root) {
-        return recur_depth(root);
-    }
-    
-    int recur_depth(TreeNode* node)
+    vector<TreeNode *> generateTree(int from, int to)
     {
-        if(!node) return 0;
-        if(!node->left) return 1+ recur_depth(node->right);
-        if(!node->right) return 1+ recur_depth(node->left);
-        return 1+min(recur_depth(node->right),recur_depth(node->left));
-        
+        vector<TreeNode *> ret;
+        if(to < from) ret.push_back(0);
+        if(to  == from) ret.push_back(new TreeNode(from));
+        if(to  >  from)
+        {
+            for(int i=from; i<=to; i++)
+            {
+                vector<TreeNode *> l = generateTree(from, i-1);
+                vector<TreeNode *> r = generateTree(i+1, to);
+
+                for(int j=0; j<l.size(); j++)
+                {
+                    for(int k=0; k<r.size(); k++)
+                    {
+                        TreeNode * h = new TreeNode (i);
+                        h->left = l[j];
+                        h->right = r[k];
+                        ret.push_back(h);
+                    }
+                }
+            }
+        }
+        return ret;
+    }
+
+    vector<TreeNode *> generateTrees(int n) {
+        if(n<1) {
+            vector<TreeNode*> nu;
+            return nu;
+        }  
+        return generateTree(1, n);
     }
 };
