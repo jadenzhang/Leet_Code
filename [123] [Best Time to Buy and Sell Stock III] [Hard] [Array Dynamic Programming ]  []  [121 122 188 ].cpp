@@ -6,7 +6,14 @@ Question# + Difficulty + Topic + Company + Similar_Question
 */
 
 
-/* My TLE Answer :(   with O(N^2) naive thinking*/
+/* My TLE Answer :(   with O(N^2) naive thinking
+   Although it's bruce force, the best solution is 
+   just an optimized version.
+   Use DP to record the best value of previous calculated
+   partition. So we don't need to repeat calculate best
+   time to sell from 0-10 & 0-11. We only need to update
+   Best till 10 to Best till 11
+*/
 class Solution {
 public:
     int maxProfit(vector<int>& prices) 
