@@ -8,22 +8,25 @@ Question# + Difficulty + Topic + Company + Similar_Question
 class Solution {
 public:
     vector<string> generateAbbreviations(string word) {
-        vector<string> result;
-        dfs(result, word, 0, 0, "");
-        return result;
+        vector<string> ans;
+        recur(ans, word, 0, 0, "");
+        return ans;
+    }
+    void recur(vector<string> &ans,string word,int pos,int count,string current)
+    {
+        if(pos==word.size())
+        {
+            if(count) current+=to_string(count);
+            ans.push_back(current);
+            return ;
+        }
+        
+        /* Abbr */
+        recur(ans,word,pos+1,count+1,current);
+        
+        /* Copy Word */
+        /* Reset count and add to current then add current char*/
+        recur(ans,word,pos+1,0,current+(count?to_string(count):"")+word[pos]);
     }
     
-    void dfs(vector<string>& result, string word, int pos, int count, string cur) {
-        if(pos == word.size()) {
-            if(count > 0)   cur += to_string(count);
-            result.push_back(cur);
-            return;
-        }
-        /** add the current word **/
-        dfs(result, word, pos + 1, 0, cur + (count? to_string(count):"") + word[pos]);
-
-        /** skip the current word **/
-        dfs(result, word, pos + 1, count+1, cur);
-        
-    }
 };
