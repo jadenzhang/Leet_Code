@@ -28,6 +28,7 @@ public:
 
 
 /* More Tricky Approach */
+/* Use char 256 table as Hash */
 int lengthOfLongestSubstring(string s) {
         vector<int> dict(256, -1);
         int maxLen = 0, start = -1;
