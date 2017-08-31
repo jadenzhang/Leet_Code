@@ -16,15 +16,16 @@ public:
     
     void recur(vector<vector<int>> &result,vector<int> nums,vector<int> tmplist,int target,int pos)
     {
-        if(target<0) return;//wrong combination, delete last
+        if(target<0) return;//wrong combination
         else if(target==0) result.push_back(tmplist);//finish one
         else
         {
             for(int i =pos;i<nums.size();i++)
             {
+                if(nums[i]>target) return;
                 tmplist.push_back(nums[i]);
                 recur(result,nums,tmplist,target-nums[i],i);//so pos means can use more than once
-                tmplist.erase(tmplist.end()-1);// remove the num which cause negative result
+                tmplist.pop_back();// remove finished num
             }
         }
     }
