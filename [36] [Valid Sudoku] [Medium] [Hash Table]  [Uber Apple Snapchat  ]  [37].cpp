@@ -34,17 +34,29 @@ public:
 };
 
 /*Hash Table Approach */
-public boolean isValidSudoku(char[][] board) {
-    Set seen = new HashSet();
-    for (int i=0; i<9; ++i) {
-        for (int j=0; j<9; ++j) {
-            char number = board[i][j];
-            if (number != '.')
-                if (!seen.add(number + " in row " + i) ||
-                    !seen.add(number + " in column " + j) ||
-                    !seen.add(number + " in block " + i/3 + "-" + j/3))
-                    return false;
+class Solution {
+public:
+    bool isValidSudoku(vector<vector<char>>& board) {
+        unordered_map<int,bool> checkrow,checkcol,checkblock;
+        /*
+            use +1 because range(1-9) but index(0-8)
+            checkrow[i][j] -> row i number j+1 exist or not
+            
+        */
+        for(int row = 0;row<board.size();row++)
+        {
+            for(int col = 0;col<board.size();col++)
+            {
+                if(board[row][col]!='.')
+                {
+                    int num = board[row][col]-'0';
+                    int block = (row/3)*3+(col/3);// (row/3) 3 vertical zone, *3, Each zone has 3 blocks, (col/3) adjust horizontal shift
+                    if(checkrow.count(10*row+num) || checkcol.count(10*col+num) || checkblock.count(10*block+num)) return false;
+                    checkrow[10*row+num] = checkcol[10*col+num] = checkblock[10*block+num] = 1;
+                }
+
+            }
         }
+        return true;
     }
-    return true;
-}
+};
