@@ -34,7 +34,6 @@ public:
             {
                 tmp = waiting.top();
                 waiting.pop();
-                sta.pop();
                 flag = 1;
                 innum++;//iterating inorder to the cur pos
                 cout<<"here";
